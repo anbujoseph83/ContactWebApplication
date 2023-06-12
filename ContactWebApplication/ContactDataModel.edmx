@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BullfinchXG_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="contact_mst_table">
+          <Key>
+            <PropertyRef Name="cont_id" />
+          </Key>
+          <Property Name="cont_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cont_first_name" Type="varchar" MaxLength="50" />
+          <Property Name="cont_last_name" Type="varchar" MaxLength="50" />
+          <Property Name="cont_email" Type="varchar" MaxLength="50" />
+          <Property Name="cont_phone_number" Type="varchar" MaxLength="50" />
+          <Property Name="cont_address" Type="varchar" MaxLength="100" />
+          <Property Name="cont_city" Type="varchar" MaxLength="50" />
+          <Property Name="cont_state" Type="varchar" MaxLength="50" />
+          <Property Name="cont_country" Type="varchar" MaxLength="50" />
+          <Property Name="cont_postal_code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BullfinchXG_DevModelStoreContainer">
+          <EntitySet Name="contact_mst_table" EntityType="Self.contact_mst_table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BullfinchXG_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="contact_mst_table">
+          <Key>
+            <PropertyRef Name="cont_id" />
+          </Key>
+          <Property Name="cont_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cont_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cont_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cont_postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ContactEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="contact_mst_table" EntityType="Self.contact_mst_table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BullfinchXG_DevModelStoreContainer" CdmEntityContainer="ContactEntity">
+          <EntitySetMapping Name="contact_mst_table">
+            <EntityTypeMapping TypeName="BullfinchXG_DevModel.contact_mst_table">
+              <MappingFragment StoreEntitySet="contact_mst_table">
+                <ScalarProperty Name="cont_id" ColumnName="cont_id" />
+                <ScalarProperty Name="cont_first_name" ColumnName="cont_first_name" />
+                <ScalarProperty Name="cont_last_name" ColumnName="cont_last_name" />
+                <ScalarProperty Name="cont_email" ColumnName="cont_email" />
+                <ScalarProperty Name="cont_phone_number" ColumnName="cont_phone_number" />
+                <ScalarProperty Name="cont_address" ColumnName="cont_address" />
+                <ScalarProperty Name="cont_city" ColumnName="cont_city" />
+                <ScalarProperty Name="cont_state" ColumnName="cont_state" />
+                <ScalarProperty Name="cont_country" ColumnName="cont_country" />
+                <ScalarProperty Name="cont_postal_code" ColumnName="cont_postal_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

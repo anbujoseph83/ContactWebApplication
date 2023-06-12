@@ -1,0 +1,123 @@
+﻿
+
+@model IEnumerable<ContactWebApplication.contact_mst_table>
+
+@{
+    ViewBag.Title = "ContactList";
+}
+
+<h2>Contact List</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta content="initial-scale=1, maximum-scale=1,
+        user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Datatable plugin CSS file -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+    <!-- jQuery library file -->
+
+</head>
+
+<body>
+    <table id="tableID" class="table table-striped" style="width:100%">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_first_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_last_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_phone_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cont_postal_code)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_first_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_last_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_phone_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_city)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cont_postal_code)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.cont_id })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Create New", "CreateContact")
+    </p>
+
+</body>
+
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+
+    <!-- Datatable plugin JS library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+    </script>
+}
+
+<script>
+
+    /* Initialization of datatable */
+    $(document).ready(function () {
+        $('#tableID').DataTable({});
+    });
+</script>
