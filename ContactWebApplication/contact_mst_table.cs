@@ -23,8 +23,11 @@ namespace ContactWebApplication
         [Display(Name = "Last Name")]
         public string cont_last_name { get; set; }
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string cont_email { get; set; }
         [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        
         public string cont_phone_number { get; set; }
 
         [Display(Name = "Address")]

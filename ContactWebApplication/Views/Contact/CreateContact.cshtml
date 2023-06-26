@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.cont_phone_number, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.cont_phone_number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.cont_phone_number, null,  new { pattern = @"^([6-9][0-9]{9,11})$", @minlength = "10", @maxlength = "10" })
                 @Html.ValidationMessageFor(model => model.cont_phone_number, "", new { @class = "text-danger" })
             </div>
         </div>
